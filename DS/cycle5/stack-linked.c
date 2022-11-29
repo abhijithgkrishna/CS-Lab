@@ -9,27 +9,42 @@ struct node
 
 void Display()
 {
+    int data;
+    ptr = head->link;
+    printf("The Stack is :\n");
+    while (ptr != NULL)
+    {
+        data = ptr->data;
+        printf("%d \n", data);
+        ptr = ptr->link;
+    }
+    printf("\n");
 }
 
 void push(int item)
 {
     new = (struct node *)malloc(sizeof(struct node *));
     new->data = item;
-    if (head->link == NULL)
-    {
-        head->link = new;
-        new->link = NULL;
-        head = new;
-    }
-    else
-    {
-        new->link = head;
-        head = new;
-    }
+    new->link = head->link;
+    head->link = new;
 }
 
 int pop()
 {
+    int item;
+    if (head->link != NULL)
+    {
+        ptr = head->link;
+        item = ptr->data;
+        head->link = ptr->link;
+        free(ptr);
+        return item;
+    }
+    else
+    {
+        printf("Cannot pop, Stack empty \n");
+        return -999;
+    }
 }
 
 void main()
@@ -42,7 +57,8 @@ void main()
     {
         printf("\n---------------------------------\n");
         printf("Stack using Linked List \n");
-        printf("1. Push \n2.Pop \n3. Exit");
+        printf("1. Push \n2. Pop \n3. Exit\n");
+        printf("Input option : ");
         scanf("%d", &opt);
         switch (opt)
         {
@@ -54,7 +70,10 @@ void main()
             break;
         case 2:
             item = pop();
-            printf("Popped item is : %d \n", item);
+            if (item != -999)
+            {
+                printf("Popped item is : %d \n", item);
+            }
             Display();
             break;
         case 3:
