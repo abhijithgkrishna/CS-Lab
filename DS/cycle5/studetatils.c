@@ -149,7 +149,7 @@ void search()
         printf("student not found\n");
     else
     {
-        printf("STUDENT DETAILS:\n\n\n\nStudent no:%d\nStudent name:%s\nTotal marks:%d\n", ptr->num, ptr->name, ptr->marks);
+        printf("STUDENT DETAILS:\nStudent no:%d\nStudent name:%s\nTotal marks:%d\n", ptr->num, ptr->name, ptr->marks);
     }
 }
 
