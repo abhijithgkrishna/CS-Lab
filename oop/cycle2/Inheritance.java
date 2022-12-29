@@ -12,9 +12,6 @@ class Employee{
 }
 class Officer extends Employee{
 	String specialisation;
-	public static void main(String[] args) {
-		
-	}
 }
 class Manager extends Employee{
 	String dept;

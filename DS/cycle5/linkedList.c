@@ -5,7 +5,7 @@ struct node
 {
 	int data;
 	struct node *link;
-} * head, *ptr, *new, *temp;
+} *head, *ptr, *new, *temp;
 
 void Display()
 {
@@ -111,7 +111,7 @@ void main()
 		printf("\n\n-------------------------------------------------\n");
 		printf("Linked list operations\n");
 		printf("Enter option : \n");
-		printf("1. Insert at beginning \n2. Insert at end \n3. Insert at specified position \n4. Delete from beginning \n5. Delete from end \n6. Delete from specified position \n7. Exit\n");
+		printf("1. Insert at beginning \n2. Insert at end\n3. Insert at specified position \n4. Delete from beginning \n5. Delete from end \n6. Delete from specified position \n7. Exit\n");
 		scanf("%d", &opt);
 		switch (opt)
 		{

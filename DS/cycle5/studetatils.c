@@ -8,13 +8,13 @@ struct node
     char name[15];
     int marks;
     struct node *link;
-} * new, *ptr, *temp, *head;
+} *new, *ptr, *temp, *head;
 
 int cnt;
 
 void display();
 void insert();
-void delete ();
+void delete();
 void search();
 void sort();
 
@@ -91,7 +91,7 @@ void insert()
     cnt++;
 }
 
-void delete ()
+void delete()
 {
     int n, i = 0;
     printf("Enter the number of the student to be deleted\n");
