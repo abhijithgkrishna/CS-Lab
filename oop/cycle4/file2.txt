@@ -1,2 +1,2 @@
-hi i am john
-i am happy
+This is a sample text
+to check Wordcount program
