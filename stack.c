@@ -1,7 +1,7 @@
 int top = -1;
-char s[20],item;
+int s[20], item;
 
-void push(char item)
+void push(int item)
 {
 	if (top == 19)
 	{
@@ -9,12 +9,12 @@ void push(char item)
 	}
 	else
 	{
-		top ++;
+		top++;
 		s[top] = item;
 	}
 }
 
-char pop()
+int pop()
 {
 	char item;
 	if (top == -1)
@@ -24,7 +24,7 @@ char pop()
 	else
 	{
 		item = s[top];
-		top --;
+		top--;
 		return item;
 	}
 }
