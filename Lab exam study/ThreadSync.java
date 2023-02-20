@@ -1,5 +1,3 @@
-import java.util.*;
-
 class square {
     synchronized void printSquare(int n) {
         for (int i = 1; i <= n; i++) {
