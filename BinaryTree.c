@@ -5,7 +5,7 @@ struct node
     char data;
     struct node *lchild;
     struct node *rchild;
-} * root, *ptr, *ptr1, *new, *temp;
+} *root, *ptr, *ptr1, *new, *temp;
 void Buildtree(struct node *ptr)
 {
     char ch1, ch2;
@@ -153,18 +153,18 @@ void postorder(struct node *ptr)
 }
 void succ()
 {
-    temp=ptr;
+    temp = ptr;
     ptr1 = ptr->rchild;
     if (ptr1 != NULL)
     {
         while (ptr1->lchild != NULL)
         {
-            temp=ptr1;
+            temp = ptr1;
             ptr1 = ptr1->lchild;
         }
     }
 }
-void delete ()
+void delete()
 {
     char item;
     printf("Enter the data of node to be deleted:");
@@ -205,12 +205,12 @@ void delete ()
             succ();
             ptr->data = ptr1->data;
             if (temp->lchild == ptr1)
-                if (ptr1->rchild==NULL)
+                if (ptr1->rchild == NULL)
                     temp->lchild = NULL;
                 else
                     temp->lchild = ptr1->rchild;
             else if (temp->rchild == ptr1)
-                if (ptr1->rchild==NULL)
+                if (ptr1->rchild == NULL)
                     temp->rchild = NULL;
                 else
                     temp->rchild = ptr1->rchild;

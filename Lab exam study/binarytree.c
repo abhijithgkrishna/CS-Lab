@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct
+typedef struct node
 {
     int data;
     struct node *left;
@@ -30,14 +30,14 @@ void BuildTree(node *ptr, int item)
         {
             printf("Enter value of left child : ");
             scanf("%d", &value);
-            BuildTree(LC, value);
             ptr->left = LC;
+            BuildTree(LC, value);
         }
         else
         {
             LC = NULL;
-            BuildTree(LC, NULL);
             ptr->left = NULL;
+            BuildTree(LC, -1);
         }
 
         printf("Does %d has right node (y/n) : ", item);
@@ -47,14 +47,14 @@ void BuildTree(node *ptr, int item)
             printf("Enter value of right child : ");
             scanf("%d", &value);
             RC = getnode();
-            BuildTree(RC, value);
             ptr->right = RC;
+            BuildTree(RC, value);
         }
         else
         {
             RC = NULL;
-            BuildTree(RC, NULL);
             ptr->right = NULL;
+            BuildTree(RC, -1);
         }
     }
 }
@@ -71,7 +71,10 @@ void Inorder(node *ptr)
 
 void main()
 {
+    root = getnode();
     int rootval;
     printf("enter the value of root : ");
     scanf("%d", &rootval);
+    BuildTree(root, rootval);
+    Inorder(root);
 }
