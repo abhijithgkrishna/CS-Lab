@@ -13,33 +13,23 @@ class square {
 
 class mythread1 extends Thread {
     square s;
+    int n;
 
-    mythread1(square def) {
+    mythread1(square def, int n) {
         s = def;
+        this.n = n;
     }
 
     public void run() {
-        s.printSquare(5);
-    }
-}
-
-class mythread2 extends Thread {
-    square h;
-
-    mythread2(square klm) {
-        h = klm;
-    }
-
-    public void run() {
-        h.printSquare(10);
+        s.printSquare(n);
     }
 }
 
 class ThreadSync {
     public static void main(String[] args) {
         square abc = new square();
-        mythread1 t1 = new mythread1(abc);
-        mythread2 t2 = new mythread2(abc);
+        mythread1 t1 = new mythread1(abc, 5);
+        mythread1 t2 = new mythread1(abc, 6);
         t1.start();
         t2.start();
     }

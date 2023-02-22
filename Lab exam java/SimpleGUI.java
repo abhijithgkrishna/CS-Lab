@@ -22,7 +22,6 @@ class DrawSec extends JPanel {
                 break;
             case 4:
                 g.setColor(getBackground());
-                ;
                 g.fillRect(0, 0, 100, 100);
                 break;
             default:
