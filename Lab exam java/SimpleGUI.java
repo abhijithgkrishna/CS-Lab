@@ -6,32 +6,35 @@ class DrawSec extends JPanel {
     int choice;
     int x1, y1;
 
-    // public void paint(Graphics g) {
-    // switch (choice) {
-    // case 1:
-    // g.setColor(Color.red);
-    // g.fillRect(0, 0, 100, 100);
-    // break;
-    // case 2:
-    // g.setColor(Color.green);
-    // g.fillRect(0, 0, 100, 100);
-    // break;
-    // case 3:
-    // g.setColor(Color.yellow);
-    // g.fillRect(0, 0, 100, 100);
-    // break;
-    // case 4:
-    // g.dispose();
-    // break;
-    // default:
-    // System.out.println("wrong choice");
-    // }
-    // }
     public void paint(Graphics g) {
-        System.out.println(x1 + y1);
-        g.setColor(Color.black);
-        g.drawRect(x1, y1, 10, 10);
+        switch (choice) {
+            case 1:
+                g.setColor(Color.red);
+                g.fillRect(0, 0, 100, 100);
+                break;
+            case 2:
+                g.setColor(Color.green);
+                g.fillRect(0, 0, 100, 100);
+                break;
+            case 3:
+                g.setColor(Color.yellow);
+                g.fillRect(0, 0, 100, 100);
+                break;
+            case 4:
+                g.setColor(getBackground());
+                ;
+                g.fillRect(0, 0, 100, 100);
+                break;
+            default:
+                System.out.println("wrong choice");
+        }
     }
+
+    // public void paint(Graphics g) {
+    // System.out.println(x1 + y1);
+    // g.setColor(Color.black);
+    // g.drawRect(x1, y1, 10, 10);
+    // }
 }
 
 class GUICalc extends JFrame implements ItemListener, ActionListener, MouseListener {
@@ -102,7 +105,7 @@ class GUICalc extends JFrame implements ItemListener, ActionListener, MouseListe
     }
 
     public void actionPerformed(ActionEvent aEvent) {
-        if (aEvent.getSource() == clr) {
+        if (aEvent.getActionCommand().toString() == "Clear") {
             ob.choice = 4;
             System.out.println("Clear");
             ob.repaint();
