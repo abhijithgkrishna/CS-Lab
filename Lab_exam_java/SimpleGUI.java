@@ -9,20 +9,28 @@ class DrawSec extends JPanel {
     public void paint(Graphics g) {
         switch (choice) {
             case 1:
-                g.setColor(Color.red);
-                g.fillRect(0, 0, 100, 100);
+                g.setColor(getBackground());
+                g.fillRect(0, 0, 100, 200);
+                g.setColor(Color.blue);
+                g.drawRect(0, 0, 100, 100);
                 break;
             case 2:
-                g.setColor(Color.green);
-                g.fillRect(0, 0, 100, 100);
+                g.setColor(getBackground());
+                g.fillRect(0, 0, 100, 200);
+                g.setColor(Color.blue);
+                g.drawOval(0, 0, 100, 100);
                 break;
             case 3:
-                g.setColor(Color.yellow);
-                g.fillRect(0, 0, 100, 100);
+                g.setColor(getBackground());
+                g.fillRect(0, 0, 100, 200);
+                g.setColor(Color.blue);
+                g.drawLine(10, 10, 10, 90);
+                g.drawLine(10, 90, 90, 90);
+                g.drawLine(10, 10, 90, 90);
                 break;
             case 4:
                 g.setColor(getBackground());
-                g.fillRect(0, 0, 100, 100);
+                g.fillRect(0, 0, 100, 200);
                 break;
             default:
                 System.out.println("wrong choice");
@@ -36,7 +44,7 @@ class DrawSec extends JPanel {
     // }
 }
 
-class GUICalc extends JFrame implements ItemListener, ActionListener, MouseListener {
+class GUICalc extends JFrame implements ItemListener, ActionListener {
     JLabel l1;
     JRadioButton b1 = new JRadioButton("Red");
     JRadioButton b2 = new JRadioButton("Green");
@@ -55,7 +63,7 @@ class GUICalc extends JFrame implements ItemListener, ActionListener, MouseListe
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
         ob = new DrawSec();
-        ob.addMouseListener(this);
+        // ob.addMouseListener(this);
         g.add(b1);
         g.add(b2);
         g.add(b3);
@@ -111,35 +119,35 @@ class GUICalc extends JFrame implements ItemListener, ActionListener, MouseListe
         }
     }
 
-    public void mousePressed(MouseEvent mouseEvent) {
-        System.out.println("mouse pressed");
-        int x;
-        int y;
-        x = mouseEvent.getX();
-        y = mouseEvent.getY();
-        System.out.println(x);
-        System.out.println(y);
-        ob.x1 = x;
-        ob.y1 = y;
-        repaint();
+    // public void mousePressed(MouseEvent mouseEvent) {
+    // System.out.println("mouse pressed");
+    // int x;
+    // int y;
+    // x = mouseEvent.getX();
+    // y = mouseEvent.getY();
+    // System.out.println(x);
+    // System.out.println(y);
+    // ob.x1 = x;
+    // ob.y1 = y;
+    // repaint();
 
-    }
+    // }
 
-    public void mouseReleased(MouseEvent mouseEvent) {
+    // public void mouseReleased(MouseEvent mouseEvent) {
 
-    }
+    // }
 
-    public void mouseEntered(MouseEvent mouseEvent) {
+    // public void mouseEntered(MouseEvent mouseEvent) {
 
-    }
+    // }
 
-    public void mouseExited(MouseEvent mouseEvent) {
+    // public void mouseExited(MouseEvent mouseEvent) {
 
-    }
+    // }
 
-    public void mouseClicked(MouseEvent mouseEvent) {
+    // public void mouseClicked(MouseEvent mouseEvent) {
 
-    }
+    // }
 }
 
 public class SimpleGUI {
