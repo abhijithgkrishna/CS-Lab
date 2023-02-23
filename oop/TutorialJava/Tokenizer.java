@@ -4,7 +4,7 @@ public class Tokenizer {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String array;
-		Integer sum = 0, n, i = 0;
+		Integer sum = 0;
 		System.out.println("Input array");
 		array = sc.nextLine();
 		System.out.println(array);

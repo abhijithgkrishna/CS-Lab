@@ -1,34 +1,32 @@
 import java.lang.Thread;
 import java.util.*;
 
-class Printer{
-	synchronized public static void print(String name){
-		for (int i = 0;i<5;i++) {
+class Printer {
+	synchronized public static void print(String name) {
+		for (int i = 0; i < 5; i++) {
 			System.out.println("Now inside " + name);
-			try{
+			try {
 				Thread.sleep(500);
-			}catch(Exception e){
+			} catch (Exception e) {
 				System.out.println(e);
 			}
 		}
 	}
 }
 
-class MyThread1 extends Thread{
-	public void run()
-	{
+class MyThread1 extends Thread {
+	public void run() {
 		Printer.print(currentThread().getName());
 	}
 }
 
-class MyThread2 extends Thread{
-	public void run()
-	{
+class MyThread2 extends Thread {
+	public void run() {
 		Printer.print(currentThread().getName());
 	}
 }
 
-public class Thread2{
+public class Thread2 {
 	public static void main(String[] args) {
 		MyThread1 ob1 = new MyThread1();
 		ob1.setName("First Thread");
